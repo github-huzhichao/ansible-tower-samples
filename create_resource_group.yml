@@ -1,7 +1,7 @@
 - name: Create a resource group
   azure_rm_resourcegroup:
-    name: "ansibletest01"
-    location: "chinaeast2"
+    name: "{{resource_group_name}}"
+    location: "{{location}}"
     tags:
         testing: testing
         delete: never
