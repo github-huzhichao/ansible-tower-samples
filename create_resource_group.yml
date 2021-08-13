@@ -1,7 +1,11 @@
-- name: Create a resource group
-  azure_rm_resourcegroup:
-    name: "{{resource_group_name}}"
-    location: "{{location}}"
-    tags:
-        testing: testing
-        delete: never
+---
+- hosts: localhost
+  connection: local
+  tasks:
+    - name: Creating resource group - ansibletest
+      azure_rm_resourcegroup:
+        name: ansibletest
+        location: chinaeast2
+      register: rg
+    - debug:
+        var: rg
