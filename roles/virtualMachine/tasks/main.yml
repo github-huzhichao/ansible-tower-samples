@@ -1,0 +1,68 @@
+- name: Create storage account
+  azure_rm_storageaccount:
+    resource_group: "{{ resource_group_name }}"
+    name: "{{ storage_account_name }}"
+    account_type: Standard_LRS
+
+- name: Create container foo and upload a file
+  azure_rm_storageblob:
+    resource_group: "{{ resource_group_name }}"
+    storage_account_name: "{{ storage_account_name }}"
+    container: "{{ storage_container_name }}"
+
+- name: Create virtual network
+  azure_rm_virtualnetwork:
+    resource_group: "{{ resource_group_name }}"
+    name: "{{ virtual_network_name }}"
+    address_prefixes: "10.10.0.0/16"
+
+- name: Add subnet
+  azure_rm_subnet:
+    resource_group: "{{ resource_group_name }}"
+    name: "{{ virtual_subnet_name }}"
+    address_prefix: "10.10.0.0/24"
+    virtual_network: "{{ virtual_network_name }}"
+
+- name: Create public ip
+  azure_rm_publicipaddress:
+    resource_group: "{{ resource_group_name }}"
+    allocation_method: Static
+    name: "{{ public_ip_name }}"
+
+- name: Create security group that allows SSH
+  azure_rm_securitygroup:
+    resource_group: "{{ resource_group_name }}"
+    name: "{{ nsg_name }}"
+    rules:
+      - name: SSH
+        protocol: Tcp
+        destination_port_range: 22
+        access: Allow
+        priority: 101
+        direction: Inbound
+
+- name: Create NIC
+  azure_rm_networkinterface:
+    resource_group: "{{ resource_group_name }}"
+    name: "{{ nic_name }}"
+    virtual_network: "{{ virtual_network_name }}"
+    subnet: "{{ virtual_subnet_name }}"
+    public_ip_name: "{{ public_ip_name }}"
+    security_group: "{{ nsg_name }}"
+
+- name: Create virtual machine
+  azure_rm_virtualmachine:
+    resource_group: "{{ resource_group_name }}"
+    name: "{{ virtual_machine_name }}"
+    vm_size: Standard_D2s_v3
+    storage_account: "{{ storage_account_name }}"
+    storage_container: "{{ storage_container_name }}"
+    storage_blob: ansible-test-001.vhd
+    admin_username: azureuser
+    admin_password: 123qwe!@#QWE
+    network_interfaces: "{{ nic_name }}"
+    image:
+      offer: CentOS
+      publisher: OpenLogic
+      sku: '7.5'
+      version: latest

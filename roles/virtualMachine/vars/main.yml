@@ -1,0 +1,10 @@
+---
+resource_group_name: ansible-test
+storage_account_name: ansibletest
+storage_container_name: vhds
+virtual_network_name: ansible-vnet
+virtual_subnet_name: ansible-subnet
+public_ip_name: ansible-ip
+nsg_name: ansible-nsg
+nic_name: ansible-nic
+virtual_machine_name: ansiblevm2

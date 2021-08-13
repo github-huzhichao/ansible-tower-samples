@@ -1,0 +1,27 @@
+- name: Get facts by name
+  register: vm_info
+  azure_rm_virtualmachine_info:
+    resource_group: "{{ resource_group_name }}"
+    name: "{{ virtual_machine_name }}"
+
+- name: show vm info
+  debug: msg="{{vm_info.vms[0].id}}"
+
+- name: Create/Update Azure Recovery Service vault
+  register: recovery_vault_info
+  azure_rm_recoveryservicesvault:
+    resource_group: "{{ resource_group_name }}"
+    name: "{{ recovery_vault_name }}"
+    location: "{{ location }}"
+    state: 'present'
+
+- name: show recovery service vault inf
+  debug: msg="{{recovery_vault_info}}"
+
+- name: Enabling/Updating protection for the Azure VM
+  azure_rm_backupazurevm:
+    resource_group: "{{ resource_group_name }}"
+    recovery_vault_name: "{{ recovery_vault_name }}"
+    resource_id: "{{vm_info.vms[0].id}}"
+    backup_policy_id: '{{recovery_vault_info.response.id}}/backupPolicies/DefaultPolicy'
+    state: 'create'
