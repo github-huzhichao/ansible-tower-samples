@@ -7,4 +7,4 @@ virtual_subnet_name: ansible-subnet
 public_ip_name: ansible-ip
 nsg_name: ansible-nsg
 nic_name: ansible-nic
-virtual_machine_name: ansiblevm2
+virtual_machine_name: ansible-vm
