@@ -6,7 +6,7 @@
             "type": "SecureString"
         },
         "vaults_ansible_rs_name": {
-            "defaultValue": "ansible-rs",
+            "defaultValue": "ansiblevm-recoveryvault",
             "type": "String"
         }
     },
