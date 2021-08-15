@@ -3,5 +3,13 @@
     resource_group: "{{ resource_group_name }}"
     name: "{{ azure_deployment_name }}"
     location: "{{ location }}"
-    template_link: "{{ template_link }}"
-    parameters_link: "{{ parameters_link }}"
+    template_link: "{{ recovery_service_template_link }}"
+    parameters_link: "{{ recovery_service_parameters_link }}"
+    
+- name: Create Recovery Service Protected Item Deploy
+  azure_rm_deployment:
+    resource_group: "{{ resource_group_name }}"
+    name: "{{ azure_deployment_name }}"
+    location: "{{ location }}"
+    template_link: "{{ protected_item_template_link }}"
+    parameters_link: "{{ protected_item_parameters_link }}"
