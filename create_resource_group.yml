@@ -1,11 +1,7 @@
+  
 ---
 - hosts: localhost
   connection: local
-  tasks:
-    - name: Creating resource group - ansibletest
-      azure_rm_resourcegroup:
-        name: ansibletest
-        location: chinaeast2
-      register: rg
-    - debug:
-        var: rg
+  gather_facts: no
+  roles:
+    - resourceGroup
