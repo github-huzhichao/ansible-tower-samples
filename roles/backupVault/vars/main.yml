@@ -2,5 +2,5 @@
 resource_group_name: ansible-test
 location: chinaeast2
 azure_deployment_name: azure_deployment_001
-template_link: https://github.com/github-huzhichao/ansible-tower-samples/blob/main/roles/backupVault/vars/recovery_service_vault_deploy.json
-parameters_link: https://github.com/github-huzhichao/ansible-tower-samples/blob/main/roles/backupVault/vars/recovery_service_vault_deploy.parameters.json
+template_link: https://raw.githubusercontent.com/github-huzhichao/ansible-tower-samples/main/roles/backupVault/vars/recovery_service_vault_deploy.json
+parameters_link: https://raw.githubusercontent.com/github-huzhichao/ansible-tower-samples/main/roles/backupVault/vars/recovery_service_vault_deploy.parameters.json
