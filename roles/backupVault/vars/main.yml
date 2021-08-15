@@ -1,7 +1,7 @@
 ---
 resource_group_name: ansible-test
-virtual_machine_name: ansiblevm2
-recovery_vault_name: ansiblevm2-vault
+virtual_machine_name: ansible-vm
+recovery_vault_name: ansiblevm-vault
 location: chinaeast2
-backup_policy_name: ansiblevm2-bakcup
+backup_policy_name: ansiblevm-bakcup
 
