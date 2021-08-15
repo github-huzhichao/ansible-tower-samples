@@ -1,7 +1,5 @@
 ---
 resource_group_name: ansible-test
-virtual_machine_name: ansible-vm
-recovery_vault_name: ansiblevm-vault
-location: chinaeast2
-backup_policy_name: ansiblevm-bakcup
-
+azure_deployment_name: azure_deployment_001
+template_link: https://github.com/github-huzhichao/ansible-tower-samples/blob/main/roles/backupVault/vars/recovery_service_vault_deploy.json
+parameters_link: https://github.com/github-huzhichao/ansible-tower-samples/blob/main/roles/backupVault/vars/recovery_service_vault_deploy.parameters.json
