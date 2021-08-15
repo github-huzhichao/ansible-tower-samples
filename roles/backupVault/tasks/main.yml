@@ -3,5 +3,5 @@
     resource_group: "{{ resource_group_name }}"
     name: "{{ azure_deployment_name }}"
     location: "{{ location }}"
-    template_link: "https://github.com/github-huzhichao/ansible-tower-samples/blob/main/roles/backupVault/vars/recovery_service_vault_deploy.json"
-    parameters_link: "https://github.com/github-huzhichao/ansible-tower-samples/blob/main/roles/backupVault/vars/recovery_service_vault_deploy.parameters.json"
+    template_link: "{{ template_link }}"
+    parameters_link: "{{ parameters_link }}"
