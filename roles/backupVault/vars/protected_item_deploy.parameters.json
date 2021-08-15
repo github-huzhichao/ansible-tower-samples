@@ -1,0 +1,44 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "armProviderNamespace": {
+            "value": "Microsoft.RecoveryServices"
+        },
+        "vaultName": {
+            "value": "ansiblevm-recoveryvault"
+        },
+        "vaultRG": {
+            "value": "ansible-test"
+        },
+        "vaultSubID": {
+            "value": "6db369b6-bf86-4309-a858-cd24e135380a"
+        },
+        "policyName": {
+            "value": "DefaultPolicy"
+        },
+        "fabricName": {
+            "value": "Azure"
+        },
+        "protectionContainers": {
+            "value": [
+                "IaasVMContainer;iaasvmcontainerv2;ansible-test;ansible-vm"
+            ]
+        },
+        "protectedItems": {
+            "value": [
+                "vm;iaasvmcontainerv2;ansible-test;ansible-vm"
+            ]
+        },
+        "sourceResourceIds": {
+            "value": [
+                "/subscriptions/6db369b6-bf86-4309-a858-cd24e135380a/resourceGroups/ansible-test/providers/Microsoft.Compute/virtualMachines/ansible-vm"
+            ]
+        },
+        "extendedProperties": {
+            "value": [
+                {}
+            ]
+        }
+    }
+}
