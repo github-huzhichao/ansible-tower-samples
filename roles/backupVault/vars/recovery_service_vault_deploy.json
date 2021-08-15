@@ -3,7 +3,8 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "replicationVaultSettings_default_migrationSolutionId": {
-            "type": "SecureString"
+            "defaultValue": "/subscriptions/6db369b6-bf86-4309-a858-cd24e135380a/resourceGroups/ansible-test/providers/Microsoft.Migrate/MigrateProjects/resourceGroupPS1-MigrateProject/Solutions/Servers-Migration-ServerMigration",
+            "type": "String"
         },
         "vaults_ansible_rs_name": {
             "defaultValue": "ansiblevm-recoveryvault",
