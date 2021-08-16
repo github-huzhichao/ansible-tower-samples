@@ -1,8 +1,8 @@
 ---
 resource_group_name: ansible-test
 location: chinaeast2
-recovery_service_deployment_name: recovery_service_deployment_name_002
-protected_item_deployment_name: protected_item_deployment_name_002
+recovery_service_deployment_name: recovery_service_deployment_name_003
+protected_item_deployment_name: protected_item_deployment_name_003
 recovery_service_template_link: https://raw.githubusercontent.com/github-huzhichao/ansible-tower-samples/main/roles/backupVault/vars/recovery_service_vault_deploy.json
 recovery_service_parameters_link : https://raw.githubusercontent.com/github-huzhichao/ansible-tower-samples/main/roles/backupVault/vars/recovery_service_vault_deploy.parameters.json
 protected_item_template_link: https://raw.githubusercontent.com/github-huzhichao/ansible-tower-samples/main/roles/backupVault/vars/protected_item_deploy.json
