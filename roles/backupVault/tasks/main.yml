@@ -1,7 +1,7 @@
 - name: Create Recovery Service Deploy
   azure_rm_deployment:
     resource_group: "{{ resource_group_name }}"
-    name: "{{ recovery_service_deployment_name }}{{ random|100 }}"
+    name: "{{ recovery_service_deployment_name }}{{ 100 | random }}"
     location: "{{ location }}"
     template_link: "{{ recovery_service_template_link }}"
     parameters_link: "{{ recovery_service_parameters_link }}"
@@ -9,7 +9,7 @@
 - name: Create Recovery Service Protected Item Deploy
   azure_rm_deployment:
     resource_group: "{{ resource_group_name }}"
-    name: "{{ protected_item_deployment_name }}{{ random|100 }}"
+    name: "{{ protected_item_deployment_name }}{{ 100 | random }}"
     location: "{{ location }}"
     template_link: "{{ protected_item_template_link }}"
     parameters_link: "{{ protected_item_parameters_link }}"
